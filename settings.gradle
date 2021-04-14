@@ -1,0 +1,3 @@
+include ':e-core-library'
+include ':app'
+rootProject.name = "E-Libraries"
