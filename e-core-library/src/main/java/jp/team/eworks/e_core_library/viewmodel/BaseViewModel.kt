@@ -12,10 +12,14 @@ import kotlinx.coroutines.cancelChildren
 import kotlin.coroutines.CoroutineContext
 
 abstract class BaseViewModel : ViewModel(), CoroutineScope {
+    companion object {
+        const val NO_SET_CODE: Int = -1
+    }
+
     sealed class State {
-        data class Loading(val code: Int) : State()
-        data class Loaded(val code: Int) : State()
-        data class LoadFailure(val code: Int, val cause: Throwable) : State()
+        data class Loading(val code: Int = NO_SET_CODE) : State()
+        data class Loaded(val code: Int = NO_SET_CODE) : State()
+        data class LoadFailure(val code: Int = NO_SET_CODE, val cause: Throwable) : State()
     }
 
     protected val state = MutableLiveData<State>()
