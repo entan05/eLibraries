@@ -15,7 +15,7 @@ class Extra {
             lazy { ViewModelProvider.NewInstanceFactory().create(T::class.java) }
     }
 
-    private object UninitializedValueForExtra
+    internal object UninitializedValueForExtra
 
     class Activity<T> : ReadWriteProperty<StandardActivity, T> {
         var field: Any? = UninitializedValueForExtra

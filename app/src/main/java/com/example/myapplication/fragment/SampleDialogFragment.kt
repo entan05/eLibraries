@@ -4,11 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.TextView
 import jp.team.eworks.e_core_library.fragment.BaseDialogFragment
 import jp.team.eworks.e_core_library.utils.Extra
 import com.example.myapplication.R
+import com.example.myapplication.databinding.FragmentSampleDialogBinding
+import jp.team.eworks.e_core_library.extention.fragmentViewBinding
 
 class SampleDialogFragment : BaseDialogFragment() {
     companion object {
@@ -29,24 +29,19 @@ class SampleDialogFragment : BaseDialogFragment() {
 
     private val dialogMessage: String by Extra.Fragment()
 
-    private lateinit var rootView: View
+    private val binding: FragmentSampleDialogBinding by fragmentViewBinding()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        rootView = inflater.inflate(R.layout.fragment_sample_dialog, container, false)
-        return rootView
+        return inflater.inflate(R.layout.fragment_sample_dialog, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        rootView.findViewById<TextView>(R.id.dialog_message).apply {
-            text = dialogMessage
-        }
+        binding.dialogMessage.text = dialogMessage
 
-        rootView.findViewById<Button>(R.id.dialog_button).apply {
-            setOnClickListener {
-                dismiss()
-            }
+        binding.dialogButton.setOnClickListener {
+            dismiss()
         }
     }
 }

@@ -11,7 +11,9 @@ import androidx.recyclerview.widget.RecyclerView
 import jp.team.eworks.e_core_library.fragment.BaseFragment
 import jp.team.eworks.e_core_library.view.SnackBarView
 import com.example.myapplication.R
+import com.example.myapplication.databinding.FragmentSampleBinding
 import com.example.myapplication.databinding.ItemSampleIndicatorBinding
+import jp.team.eworks.e_core_library.extention.fragmentViewBinding
 
 class SampleFragment : BaseFragment() {
     companion object {
@@ -26,13 +28,12 @@ class SampleFragment : BaseFragment() {
         ShowQueueDialog("Show Dialog(Queue)"),
     }
 
-    private lateinit var rootView: View
-
     private lateinit var mainHandler: Handler
 
+    private val binding: FragmentSampleBinding by fragmentViewBinding()
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        rootView = inflater.inflate(R.layout.fragment_sample, container, false)
-        return rootView
+        return inflater.inflate(R.layout.fragment_sample, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -49,7 +50,7 @@ class SampleFragment : BaseFragment() {
     }
 
     private val _onStart: Unit by lazy {
-        rootView.findViewById<RecyclerView>(R.id.recycler_view).apply {
+        binding.recyclerView.apply {
             adapter = ListAdapter()
             layoutManager = LinearLayoutManager(requireContext())
         }
@@ -58,7 +59,7 @@ class SampleFragment : BaseFragment() {
 
     private fun initView() {
 
-        rootView.findViewById<View>(R.id.fragment_background).setOnClickListener {
+        binding.root.setOnClickListener {
             // do nothing
         }
     }
