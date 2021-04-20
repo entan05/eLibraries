@@ -22,6 +22,7 @@
         </activity>
         <activity android:name=".activity.SampleIndicatorActivity" />
         <activity android:name=".activity.SampleApiActivity" />
+        <activity android:name=".activity.SampleTextStyleActivity" />
     </application>
 
 </manifest>
