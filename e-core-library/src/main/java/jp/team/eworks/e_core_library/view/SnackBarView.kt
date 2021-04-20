@@ -23,6 +23,13 @@ class SnackBarView : ConstraintLayout, SnackBarViewInterface {
     override val hideDelayMillis: Long
         get() = 5000
 
+    private var _hiddenProcess: (() -> Unit)? = null
+    override var hiddenProcess: (() -> Unit)?
+        get() = _hiddenProcess
+        set(value) {
+            _hiddenProcess = value
+        }
+
     var message: String
         set(value) {
             snackBarTextView.text = value
@@ -42,19 +49,22 @@ class SnackBarView : ConstraintLayout, SnackBarViewInterface {
 
         snackBarTextView = findViewById(R.id.snack_bar_text)
 
-        findViewById<View>(R.id.snack_bar_background).outlineProvider =
-            object : ViewOutlineProvider() {
-                override fun getOutline(view: View?, outline: Outline?) {
-                    view?.let {
-                        val radius = TypedValue.applyDimension(
-                            TypedValue.COMPLEX_UNIT_DIP,
-                            6f,
-                            context.resources.displayMetrics
-                        )
-                        outline?.setRoundRect(0, 0, it.width, it.height, radius)
-                        it.clipToOutline = true
+        findViewById<View>(R.id.snack_bar_background).apply {
+            outlineProvider =
+                object : ViewOutlineProvider() {
+                    override fun getOutline(view: View?, outline: Outline?) {
+                        view?.let {
+                            val radius = TypedValue.applyDimension(
+                                TypedValue.COMPLEX_UNIT_DIP,
+                                6f,
+                                context.resources.displayMetrics
+                            )
+                            outline?.setRoundRect(0, 0, it.width, it.height, radius)
+                            it.clipToOutline = true
+                        }
                     }
                 }
-            }
+            setOnClickListener { requestHidden() }
+        }
     }
 }

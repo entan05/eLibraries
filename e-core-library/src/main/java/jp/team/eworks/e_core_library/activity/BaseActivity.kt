@@ -168,24 +168,33 @@ abstract class BaseActivity : AppCompatActivity(), DialogParentInterface {
             }
             binding.snackBarContainer.addView(view)
 
-            ObjectAnimator.ofFloat(view, "alpha", 0f, 1f).apply {
+            val animator = ObjectAnimator.ofFloat(view, "alpha", 0f, 1f).apply {
                 duration = snackBar.hideDelayMillis / 2
                 interpolator = DecelerateInterpolator(3f)
                 repeatMode = ValueAnimator.REVERSE
                 repeatCount = 1
                 addListener(object : Animator.AnimatorListener {
                     override fun onAnimationEnd(animation: Animator?) {
+                        snackBar.hiddenProcess = null
                         binding.snackBarContainer.removeView(view)
                     }
 
                     override fun onAnimationCancel(animation: Animator?) {
+                        snackBar.hiddenProcess = null
                         binding.snackBarContainer.removeView(view)
                     }
 
                     override fun onAnimationStart(animation: Animator?) {}
                     override fun onAnimationRepeat(animation: Animator?) {}
                 })
-            }.start()
+            }
+
+            snackBar.hiddenProcess = {
+                if (animator.isRunning) {
+                    animator.cancel()
+                }
+            }
+            animator.start()
         }
     }
 
