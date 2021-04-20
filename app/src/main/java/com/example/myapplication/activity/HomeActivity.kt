@@ -16,6 +16,7 @@ class HomeActivity : BaseActivity() {
     private enum class ListItem(val itemLabel: String, val isEnable: Boolean = true) {
         IndicatorSample("Sample Indicator Activity"),
         ApiSample("Sample Api Activity"),
+        TextStyleSample("Sample Text Style"),
     }
 
     private val binding by activityBinding<ActivityHomeBinding>()
@@ -45,6 +46,12 @@ class HomeActivity : BaseActivity() {
             }
             ListItem.ApiSample -> {
                 SampleApiActivity.start(
+                    this@HomeActivity,
+                    ActivityTransitionSlideInRight, ActivityTransitionSlideOutRight
+                )
+            }
+            ListItem.TextStyleSample -> {
+                SampleTextStyleActivity.start(
                     this@HomeActivity,
                     ActivityTransitionSlideInRight, ActivityTransitionSlideOutRight
                 )

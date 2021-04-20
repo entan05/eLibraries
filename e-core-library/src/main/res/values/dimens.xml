@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="eLib_fontSize_10sp">10sp</dimen>
+    <dimen name="eLib_fontSize_12sp">12sp</dimen>
+    <dimen name="eLib_fontSize_14sp">14sp</dimen>
+    <dimen name="eLib_fontSize_16sp">16sp</dimen>
+    <dimen name="eLib_fontSize_20sp">20sp</dimen>
+    <dimen name="eLib_fontSize_24sp">24sp</dimen>
+    <dimen name="eLib_fontSize_34sp">34sp</dimen>
+    <dimen name="eLib_fontSize_48sp">48sp</dimen>
+    <dimen name="eLib_fontSize_60sp">60sp</dimen>
+    <dimen name="eLib_fontSize_96sp">96sp</dimen>
+
+    <!-- https://material.io/design/typography/the-type-system.html -->
+    <dimen name="eLib_fontSize_headline1">@dimen/eLib_fontSize_96sp</dimen>
+    <dimen name="eLib_fontSize_headline2">@dimen/eLib_fontSize_60sp</dimen>
+    <dimen name="eLib_fontSize_headline3">@dimen/eLib_fontSize_48sp</dimen>
+    <dimen name="eLib_fontSize_headline4">@dimen/eLib_fontSize_34sp</dimen>
+    <dimen name="eLib_fontSize_headline5">@dimen/eLib_fontSize_24sp</dimen>
+    <dimen name="eLib_fontSize_headline6">@dimen/eLib_fontSize_20sp</dimen>
+    <dimen name="eLib_fontSize_subtitle1">@dimen/eLib_fontSize_16sp</dimen>
+    <dimen name="eLib_fontSize_subtitle2">@dimen/eLib_fontSize_14sp</dimen>
+    <dimen name="eLib_fontSize_body1">@dimen/eLib_fontSize_16sp</dimen>
+    <dimen name="eLib_fontSize_body2">@dimen/eLib_fontSize_14sp</dimen>
+    <dimen name="eLib_fontSize_caption">@dimen/eLib_fontSize_12sp</dimen>
+    <dimen name="eLib_fontSize_overLine">@dimen/eLib_fontSize_10sp</dimen>
+
+    <dimen name="eLib_margin_4dp">4dp</dimen>
+    <dimen name="eLib_margin_8dp">8dp</dimen>
+    <dimen name="eLib_margin_12dp">12dp</dimen>
+    <dimen name="eLib_margin_16dp">16dp</dimen>
+    <dimen name="eLib_margin_32dp">32dp</dimen>
+    <dimen name="eLib_margin_64dp">64dp</dimen>
+
+    <dimen name="eLib_padding_4dp">4dp</dimen>
+    <dimen name="eLib_padding_8dp">8dp</dimen>
+    <dimen name="eLib_padding_12dp">12dp</dimen>
+    <dimen name="eLib_padding_16dp">16dp</dimen>
+    <dimen name="eLib_padding_32dp">32dp</dimen>
+    <dimen name="eLib_padding_64dp">64dp</dimen>
+</resources>
