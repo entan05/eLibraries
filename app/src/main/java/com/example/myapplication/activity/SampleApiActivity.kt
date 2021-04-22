@@ -12,7 +12,7 @@ import com.example.myapplication.R
 import com.example.myapplication.databinding.ActivitySampleApiBinding
 import com.example.myapplication.viewmodel.SampleViewModel
 
-class SampleApiActivity : IndicatorActivity<IndicatorView>() {
+class SampleApiActivity: IndicatorActivity<IndicatorView>() {
     companion object {
         fun start(context: Context, finishEnterAnim: Int, finishExitAnim: Int) {
             context.startActivity(Intent(context, SampleApiActivity::class.java).apply {

@@ -4,8 +4,7 @@ import android.view.View
 import jp.team.eworks.e_core_library.databinding.ActivityBaseBinding
 import jp.team.eworks.e_core_library.view.view_interface.IndicatorViewInterface
 
-abstract class IndicatorActivity<T> : BaseActivity()
-        where T : View, T : IndicatorViewInterface {
+abstract class IndicatorActivity<T>: BaseActivity() where T: View, T: IndicatorViewInterface {
 
     private lateinit var binding: ActivityBaseBinding
 

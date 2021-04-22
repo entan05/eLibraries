@@ -4,7 +4,7 @@ import jp.team.eworks.e_core_library.api.BaseApiClient
 import okhttp3.OkHttpClient
 import java.util.concurrent.TimeUnit
 
-object SampleApiClient : BaseApiClient() {
+object SampleApiClient: BaseApiClient() {
     override val httpClient: OkHttpClient by lazy {
         OkHttpClient.Builder().apply {
             connectTimeout(30, TimeUnit.SECONDS)

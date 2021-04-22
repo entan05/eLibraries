@@ -10,10 +10,10 @@ import kotlin.reflect.KProperty
 /**
  * FragmentのViewBindingを行う
  */
-inline fun <reified T : ViewBinding> Fragment.fragmentViewBinding(): ReadOnlyProperty<Fragment, T> =
+inline fun <reified T: ViewBinding> Fragment.fragmentViewBinding(): ReadOnlyProperty<Fragment, T> =
     FragmentViewProvider(T::class.java)
 
-class FragmentViewProvider<T : ViewBinding>(private val clazz: Class<T>) :
+class FragmentViewProvider<T: ViewBinding>(private val clazz: Class<T>):
     ReadOnlyProperty<Fragment, T> {
     var field: Any? = Extra.UninitializedValueForExtra
 

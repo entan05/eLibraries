@@ -3,7 +3,7 @@ package jp.team.eworks.e_core_library.utils
 import android.util.Log
 import timber.log.Timber
 
-class MyDebugTree : Timber.DebugTree() {
+class MyDebugTree: Timber.DebugTree() {
     companion object {
         private const val MAX_LENGTH = 3000
     }

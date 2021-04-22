@@ -22,7 +22,7 @@ import jp.team.eworks.e_core_library.fragment.fragment_interface.DialogParentInt
 import jp.team.eworks.e_core_library.view.view_interface.SnackBarViewInterface
 import java.util.*
 
-abstract class BaseActivity : AppCompatActivity(), DialogParentInterface {
+abstract class BaseActivity: AppCompatActivity(), DialogParentInterface {
 
     @Suppress("unused")
     companion object {
@@ -63,7 +63,7 @@ abstract class BaseActivity : AppCompatActivity(), DialogParentInterface {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        onBackPressedCallback = object : OnBackPressedCallback(true) {
+        onBackPressedCallback = object: OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 if (!handleBackPressed()) {
                     finish()
@@ -129,18 +129,18 @@ abstract class BaseActivity : AppCompatActivity(), DialogParentInterface {
     }
 
     fun showFragment(
-            fragment: BaseFragment,
-            @AnimRes enter: Int? = null,
-            @AnimRes exit: Int? = null
-    ) {
+        fragment: BaseFragment,
+        @AnimRes enter: Int? = null,
+        @AnimRes exit: Int? = null) {
+
         supportFragmentManager.beginTransaction()
-                .apply {
-                    if (enter != null && exit != null) {
-                        setCustomAnimations(enter, exit, enter, exit)
-                    }
-                }.add(R.id.fragment_container, fragment)
-                .addToBackStack(fragment.javaClass.simpleName)
-                .commit()
+            .apply {
+                if (enter != null && exit != null) {
+                    setCustomAnimations(enter, exit, enter, exit)
+                }
+            }.add(R.id.fragment_container, fragment)
+            .addToBackStack(fragment.javaClass.simpleName)
+            .commit()
     }
 
     fun showDialog(dialog: BaseDialogFragment) {
@@ -160,8 +160,8 @@ abstract class BaseActivity : AppCompatActivity(), DialogParentInterface {
         (snackBar as? View)?.let { view ->
             view.apply {
                 layoutParams = ViewGroup.LayoutParams(
-                        ViewGroup.LayoutParams.MATCH_PARENT,
-                        ViewGroup.LayoutParams.WRAP_CONTENT
+                    ViewGroup.LayoutParams.MATCH_PARENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT
                 )
                 visibility = View.VISIBLE
                 alpha = 0f
@@ -173,7 +173,7 @@ abstract class BaseActivity : AppCompatActivity(), DialogParentInterface {
                 interpolator = DecelerateInterpolator(3f)
                 repeatMode = ValueAnimator.REVERSE
                 repeatCount = 1
-                addListener(object : Animator.AnimatorListener {
+                addListener(object: Animator.AnimatorListener {
                     override fun onAnimationEnd(animation: Animator?) {
                         snackBar.hiddenProcess = null
                         binding.snackBarContainer.removeView(view)
@@ -217,7 +217,7 @@ abstract class BaseActivity : AppCompatActivity(), DialogParentInterface {
      * アクセスは {@code setContentView(layoutResID: Int)} の呼び出し後に行うこと
      * from: https://matsudamper.hatenablog.com/entry/2019/10/29/013329
      */
-    inline fun <reified T : ViewBinding> activityBinding(): Lazy<T> =
+    inline fun <reified T: ViewBinding> activityBinding(): Lazy<T> =
         lazy {
             activityBindingProcess(
                 T::class.java,
@@ -226,7 +226,7 @@ abstract class BaseActivity : AppCompatActivity(), DialogParentInterface {
         }
 
     @Suppress("UNCHECKED_CAST")
-    fun <T : ViewBinding> activityBindingProcess(clazz: Class<T>, view: View): T {
+    fun <T: ViewBinding> activityBindingProcess(clazz: Class<T>, view: View): T {
         return clazz.getMethod("bind", View::class.java).invoke(null, view) as T
     }
 }

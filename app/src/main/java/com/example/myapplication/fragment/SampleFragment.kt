@@ -15,10 +15,9 @@ import com.example.myapplication.databinding.FragmentSampleBinding
 import com.example.myapplication.databinding.ItemSampleIndicatorBinding
 import jp.team.eworks.e_core_library.extention.fragmentViewBinding
 
-class SampleFragment : BaseFragment() {
+class SampleFragment: BaseFragment() {
     companion object {
-        fun createInstance(): SampleFragment =
-                SampleFragment()
+        fun createInstance(): SampleFragment = SampleFragment()
     }
 
     private enum class ListItem(val labelText: String) {
@@ -32,7 +31,11 @@ class SampleFragment : BaseFragment() {
 
     private val binding: FragmentSampleBinding by fragmentViewBinding()
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?): View? {
+
         return inflater.inflate(R.layout.fragment_sample, container, false)
     }
 
@@ -106,7 +109,7 @@ class SampleFragment : BaseFragment() {
         }
     }
 
-    private inner class ListViewHolder(private val binding: ItemSampleIndicatorBinding) :
+    private inner class ListViewHolder(private val binding: ItemSampleIndicatorBinding):
         RecyclerView.ViewHolder(binding.root) {
 
         fun onBind(item: ListItem?) {

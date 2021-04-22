@@ -11,7 +11,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import jp.team.eworks.e_core_library.R
 import jp.team.eworks.e_core_library.view.view_interface.SnackBarViewInterface
 
-class SnackBarView : ConstraintLayout, SnackBarViewInterface {
+class SnackBarView: ConstraintLayout, SnackBarViewInterface {
 
     companion object {
         fun newInstance(context: Context, message: String): SnackBarView =
@@ -38,9 +38,9 @@ class SnackBarView : ConstraintLayout, SnackBarViewInterface {
 
     private val snackBarTextView: TextView
 
-    constructor(context: Context) : this(context, null)
-    constructor(context: Context, attrs: AttributeSet?) : this(context, attrs, 0)
-    constructor(context: Context, attrs: AttributeSet?, defStyleAttrs: Int) : super(
+    constructor(context: Context): this(context, null)
+    constructor(context: Context, attrs: AttributeSet?): this(context, attrs, 0)
+    constructor(context: Context, attrs: AttributeSet?, defStyleAttrs: Int): super(
         context,
         attrs,
         defStyleAttrs
@@ -51,7 +51,7 @@ class SnackBarView : ConstraintLayout, SnackBarViewInterface {
 
         findViewById<View>(R.id.snack_bar_background).apply {
             outlineProvider =
-                object : ViewOutlineProvider() {
+                object: ViewOutlineProvider() {
                     override fun getOutline(view: View?, outline: Outline?) {
                         view?.let {
                             val radius = TypedValue.applyDimension(
