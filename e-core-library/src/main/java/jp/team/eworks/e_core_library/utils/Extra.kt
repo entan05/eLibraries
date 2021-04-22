@@ -11,13 +11,13 @@ import kotlin.reflect.KProperty
 @Suppress("UNCHECKED_CAST")
 class Extra {
     companion object {
-        inline fun <reified T : BaseViewModel> createViewModel(): Lazy<T> =
+        inline fun <reified T: BaseViewModel> createViewModel(): Lazy<T> =
             lazy { ViewModelProvider.NewInstanceFactory().create(T::class.java) }
     }
 
     internal object UninitializedValueForExtra
 
-    class Activity<T> : ReadWriteProperty<StandardActivity, T> {
+    class Activity<T>: ReadWriteProperty<StandardActivity, T> {
         var field: Any? = UninitializedValueForExtra
 
         override fun getValue(thisRef: StandardActivity, property: KProperty<*>): T {
@@ -32,7 +32,7 @@ class Extra {
         }
     }
 
-    class Fragment<T> : ReadWriteProperty<StandardFragment, T> {
+    class Fragment<T>: ReadWriteProperty<StandardFragment, T> {
         var field: Any? = UninitializedValueForExtra
 
         override fun getValue(thisRef: StandardFragment, property: KProperty<*>): T {

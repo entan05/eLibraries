@@ -23,5 +23,6 @@ dependencies {
 ## Versions
 |Version|Note|
 |:--|:--|
+|v0.0.3|拡張関数`afterMeasured`の追加|
 |v0.0.2|定義の追加|
 |v0.0.1|first release|

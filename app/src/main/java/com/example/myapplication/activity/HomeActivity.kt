@@ -10,8 +10,10 @@ import jp.team.eworks.e_core_library.activity.BaseActivity
 import com.example.myapplication.R
 import com.example.myapplication.databinding.ActivityHomeBinding
 import com.example.myapplication.databinding.ItemHomeBinding
+import jp.team.eworks.e_core_library.extention.afterMeasured
+import timber.log.Timber
 
-class HomeActivity : BaseActivity() {
+class HomeActivity: BaseActivity() {
 
     private enum class ListItem(val itemLabel: String, val isEnable: Boolean = true) {
         IndicatorSample("Sample Indicator Activity"),
@@ -33,6 +35,10 @@ class HomeActivity : BaseActivity() {
             adapter = HomeAdapter()
             layoutManager =
                 LinearLayoutManager(this@HomeActivity, LinearLayoutManager.VERTICAL, false)
+
+            afterMeasured {
+                Timber.d("recyclerView afterMeasured called.")
+            }
         }
     }
 
@@ -61,7 +67,7 @@ class HomeActivity : BaseActivity() {
         overridePendingTransition(ActivityTransitionSlideInLeft, ActivityTransitionSlideOutLeft)
     }
 
-    private inner class HomeAdapter : RecyclerView.Adapter<HomeViewHolder>() {
+    private inner class HomeAdapter: RecyclerView.Adapter<HomeViewHolder>() {
         override fun getItemCount(): Int = ListItem.values().size
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeViewHolder {
@@ -79,7 +85,7 @@ class HomeActivity : BaseActivity() {
         }
     }
 
-    private inner class HomeViewHolder(private val binding: ItemHomeBinding) :
+    private inner class HomeViewHolder(private val binding: ItemHomeBinding):
         RecyclerView.ViewHolder(binding.root) {
         fun onBind(item: ListItem?) {
             binding.apply {
