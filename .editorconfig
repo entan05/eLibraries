@@ -30,11 +30,11 @@ ij_kotlin_while_on_new_line = false # whileを新しい行にするか
 max_line_length = 100 # 1行の最大文字数
 
 [*.xml]
-ij_xml_space_after_tag_name = false # タグの > の前にスペースを入れるか
 ij_xml_align_attributes = false # attributeの位置を揃えるか
-ij_xml_space_inside_empty_tag = true # タグの /> の前にスペースを入れるか
 ij_xml_keep_indents_on_empty_lines = false # 空行のインデントを保持するか
+ij_xml_space_after_tag_name = false # タグの > の前にスペースを入れるか
 ij_xml_space_around_equals_in_attribute = false # attributeの = の前後にスペースを入れるか
+ij_xml_space_inside_empty_tag = true # タグの /> の前にスペースを入れるか
 
 [/**/{layout/**, AndroidManifest}.xml]
 ij_xml_keep_line_breaks = true # 改行を保持するか
