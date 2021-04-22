@@ -10,6 +10,8 @@ import jp.team.eworks.e_core_library.activity.BaseActivity
 import com.example.myapplication.R
 import com.example.myapplication.databinding.ActivityHomeBinding
 import com.example.myapplication.databinding.ItemHomeBinding
+import jp.team.eworks.e_core_library.extention.afterMeasured
+import timber.log.Timber
 
 class HomeActivity : BaseActivity() {
 
@@ -33,6 +35,10 @@ class HomeActivity : BaseActivity() {
             adapter = HomeAdapter()
             layoutManager =
                 LinearLayoutManager(this@HomeActivity, LinearLayoutManager.VERTICAL, false)
+
+            afterMeasured {
+                Timber.d("recyclerView afterMeasured called.")
+            }
         }
     }
 
