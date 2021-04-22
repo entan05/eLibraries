@@ -19,7 +19,7 @@ import com.example.myapplication.databinding.ItemSampleIndicatorBinding
 import com.example.myapplication.fragment.SampleDialogFragment
 import com.example.myapplication.fragment.SampleFragment
 
-class SampleIndicatorActivity : IndicatorActivity<IndicatorView>() {
+class SampleIndicatorActivity: IndicatorActivity<IndicatorView>() {
     companion object {
         fun start(context: Context, finishEnterAnim: Int, finishExitAnim: Int) {
             context.startActivity(Intent(context, SampleIndicatorActivity::class.java).apply {
@@ -106,7 +106,7 @@ class SampleIndicatorActivity : IndicatorActivity<IndicatorView>() {
         }
     }
 
-    private inner class ListAdapter : RecyclerView.Adapter<ListViewHolder>() {
+    private inner class ListAdapter: RecyclerView.Adapter<ListViewHolder>() {
         override fun getItemCount(): Int = ListItem.values().size
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
@@ -124,7 +124,7 @@ class SampleIndicatorActivity : IndicatorActivity<IndicatorView>() {
         }
     }
 
-    private inner class ListViewHolder(private val binding: ItemSampleIndicatorBinding) :
+    private inner class ListViewHolder(private val binding: ItemSampleIndicatorBinding):
         RecyclerView.ViewHolder(binding.root) {
 
         fun onBind(item: ListItem?) {

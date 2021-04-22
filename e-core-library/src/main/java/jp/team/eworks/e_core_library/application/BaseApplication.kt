@@ -9,7 +9,7 @@ import jp.team.eworks.e_core_library.BuildConfig
 import jp.team.eworks.e_core_library.utils.MyDebugTree
 import timber.log.Timber
 
-abstract class BaseApplication : Application() {
+abstract class BaseApplication: Application() {
 
     override fun onCreate() {
         super.onCreate()
@@ -33,7 +33,7 @@ abstract class BaseApplication : Application() {
     open fun onDestroyFromLifecycle() {}
 
     @Suppress("unused")
-    private inner class ApplicationLifecycle : LifecycleObserver {
+    private inner class ApplicationLifecycle: LifecycleObserver {
         @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
         fun onCreate() {
             onCreateFromLifecycle()

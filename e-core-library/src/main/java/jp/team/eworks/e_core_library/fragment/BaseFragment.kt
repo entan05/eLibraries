@@ -9,7 +9,7 @@ import jp.team.eworks.e_core_library.fragment.fragment_interface.DialogParentInt
 import jp.team.eworks.e_core_library.view.view_interface.SnackBarViewInterface
 import java.util.*
 
-abstract class BaseFragment : Fragment(), DialogParentInterface {
+abstract class BaseFragment: Fragment(), DialogParentInterface {
 
     protected var baseActivity: BaseActivity? = null
     protected val requireBaseActivity: BaseActivity

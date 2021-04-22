@@ -6,7 +6,7 @@ import okhttp3.Request
 import java.io.BufferedReader
 import java.lang.Exception
 
-class GetSnacksApi : BaseApi(), BaseApi.Get<String> {
+class GetSnacksApi: BaseApi(), BaseApi.Get<String> {
     override val apiCode: Int
         get() = 100
 
@@ -15,9 +15,9 @@ class GetSnacksApi : BaseApi(), BaseApi.Get<String> {
 
     override suspend fun get(): String {
         val request = Request.Builder()
-                .url(path)
-                .get()
-                .build()
+            .url(path)
+            .get()
+            .build()
 
         val response = call(SampleApiClient, request)
         if (response.code != HTTP_OK) {

@@ -10,7 +10,7 @@ import com.example.myapplication.R
 import com.example.myapplication.databinding.FragmentSampleDialogBinding
 import jp.team.eworks.e_core_library.extention.fragmentViewBinding
 
-class SampleDialogFragment : BaseDialogFragment() {
+class SampleDialogFragment: BaseDialogFragment() {
     companion object {
         fun newInstance(message: String): SampleDialogFragment {
             return SampleDialogFragment().apply {
@@ -31,7 +31,11 @@ class SampleDialogFragment : BaseDialogFragment() {
 
     private val binding: FragmentSampleDialogBinding by fragmentViewBinding()
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?): View? {
+
         return inflater.inflate(R.layout.fragment_sample_dialog, container, false)
     }
 

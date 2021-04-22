@@ -26,11 +26,12 @@ abstract class BaseApi {
         suspend fun put(): T
     }
 
-    protected open suspend fun call(client: BaseApiClient, request: Request) = withContext(Dispatchers.IO) {
-        return@withContext try {
-            client.call(request)
-        } catch (e: Exception) {
-            throw e
+    protected open suspend fun call(client: BaseApiClient, request: Request) =
+        withContext(Dispatchers.IO) {
+            return@withContext try {
+                client.call(request)
+            } catch (e: Exception) {
+                throw e
+            }
         }
-    }
 }

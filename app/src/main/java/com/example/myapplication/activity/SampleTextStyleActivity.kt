@@ -7,7 +7,7 @@ import com.example.myapplication.R
 import jp.team.eworks.e_core_library.activity.BaseActivity
 import jp.team.eworks.e_core_library.utils.Extra
 
-class SampleTextStyleActivity : BaseActivity() {
+class SampleTextStyleActivity: BaseActivity() {
     companion object {
         fun start(context: Context, finishEnterAnim: Int, finishExitAnim: Int) {
             context.startActivity(Intent(context, SampleTextStyleActivity::class.java).apply {

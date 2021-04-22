@@ -5,7 +5,7 @@ import android.content.DialogInterface
 import androidx.fragment.app.DialogFragment
 import jp.team.eworks.e_core_library.fragment.fragment_interface.DialogParentInterface
 
-abstract class BaseDialogFragment : DialogFragment() {
+abstract class BaseDialogFragment: DialogFragment() {
     abstract val dialogId: Int
     abstract val dialogTag: String
 
