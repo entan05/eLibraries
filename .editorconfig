@@ -1,0 +1,51 @@
+root = true
+
+[*]
+# 文字コード
+charset = utf-8
+# 改行文字
+end_of_line = lf
+# インデントサイズ
+indent_size = 4
+# インデント方式
+indent_style = space
+# 最終行に空行を入れるか
+insert_final_newline = true
+# 末尾のホワイトスペースを取り除くか
+trim_trailing_whitespace = true
+
+[*.{kt, kts}]
+# catch を新しい行にするか
+ij_kotlin_catch_on_new_line = false
+# else を新しい行にするか
+ij_kotlin_else_on_new_line = false
+# finally を新しい行にするか
+ij_kotlin_finally_on_new_line = false
+# , の後ろにスペースを入れるか
+ij_kotlin_space_after_comma = true
+# 継承の : の後ろにスペースを入れるか
+ij_kotlin_space_after_extend_colon = true
+# 型の : の後ろにスペースを入れるか
+ij_kotlin_space_after_type_colon = true
+# catchの ( の前にスペースを入れるか
+ij_kotlin_space_before_catch_parentheses = true
+# , の前にスペースを入れるか
+ij_kotlin_space_before_comma = false
+# 継承の : の前にスペースを入れるか
+ij_kotlin_space_before_extend_colon = false
+# forの ( の前にスペースを入れるか
+ij_kotlin_space_before_for_parentheses = true
+# ifの ( の前にスペースを入れるか
+ij_kotlin_space_before_if_parentheses = true
+# lambda式の -> の前にスペースを入れるか
+ij_kotlin_space_before_lambda_arrow = true
+# 型の : の前にスペースを入れるか
+ij_kotlin_space_before_type_colon = false
+# whenの ( の前にスペースを入れるか
+ij_kotlin_space_before_when_parentheses = true
+# whileの ( の前にスペースを入れるか
+ij_kotlin_space_before_while_parentheses = true
+# whileを新しい行にするか
+ij_kotlin_while_on_new_line = false
+# 1行の最大文字数
+max_line_length = 100
