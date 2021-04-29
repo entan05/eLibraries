@@ -2,6 +2,7 @@ package jp.team.eworks.e_core_library.fragment
 
 import android.content.Context
 import androidx.annotation.CallSuper
+import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
 import jp.team.eworks.e_core_library.activity.BaseActivity
 import jp.team.eworks.e_core_library.activity.IndicatorActivity
@@ -9,7 +10,9 @@ import jp.team.eworks.e_core_library.fragment.fragment_interface.DialogParentInt
 import jp.team.eworks.e_core_library.view.view_interface.SnackBarViewInterface
 import java.util.*
 
-abstract class BaseFragment: Fragment(), DialogParentInterface {
+abstract class BaseFragment: Fragment, DialogParentInterface {
+    constructor(): super()
+    constructor(@LayoutRes layoutId: Int): super(layoutId)
 
     protected var baseActivity: BaseActivity? = null
     protected val requireBaseActivity: BaseActivity
